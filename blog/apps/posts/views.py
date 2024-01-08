@@ -21,7 +21,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = ComentarioForm()
-        context['comentarios'] = Comentario.objects.filter(posts_id=self.kwargs['id'])
+        context['comentarios'] = Comentario.objects.filter(post_id=self.kwargs['id'])
         return context
     
     def post(self, request, *args, **kwargs):
@@ -29,7 +29,7 @@ class PostDetailView(DetailView):
         if form.is_valid():
             comentario = form.save(commit=False)
             comentario.usuario = request.user
-            comentario.posts_id = self.kwargs['id']
+            comentario.post_id = self.kwargs['id']
             comentario.save()
             return redirect('apps.posts:post_individual', id=self.kwargs['id'])
         else:
