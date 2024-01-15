@@ -1,9 +1,50 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block contenido %}
 
-<div class="container-fluid" style="margin: 200px;">
+<style>
+    /* Agregamos algunos estilos específicos para la sección de posteos */
+
+    .container-fluid {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    li {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
+    #boton_post {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    #boton_post:hover {
+        background-color: #218838;
+    }
+
+    h1.no-registros {
+        margin-top: 20px;
+        color: #333;
+    }
+</style>
+
+<div class="container-fluid">
     <br>
     <h1>Sección de Posteos</h1>
 
@@ -16,9 +57,9 @@
         <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">
             Ingresá a este Post
         </a>
-        {% empty %}
-        <h1>No hay registros</h1>
-    
+    {% empty %}
+        <h1 class="no-registros">No hay registros</h1>
     {% endfor %}
 </div>
+
 {% endblock %}

@@ -1,6 +1,19 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 
-
+{% load static %}
 {% block contenido %}
-    <h1>Bienvenidos a Blogcito</h1>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="display-4">Bienvenidos a Blogcito</h1>
+                <p class="lead">Descubre artículos interesantes y mantente actualizado con las últimas noticias.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <img src="{% static 'img/welcome.jpg' %}" class="img-fluid rounded" alt="Bienvenidos">
+            </div>
+        </div>
+    </div>
 {% endblock %}

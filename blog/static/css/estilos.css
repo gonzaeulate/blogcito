@@ -1,0 +1,133 @@
+/* Archivo: static/css/estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Cambia este color a tu preferencia */
+    color: white; /* Cambia este color a tu preferencia */
+    padding: 1em;
+}
+
+
+
+nav a {
+    color: white; /* Cambia este color a tu preferencia */
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #4CAF50; /* Cambia este color a tu preferencia */
+    color: white; /* Cambia este color a tu preferencia */
+    padding: 1em;
+}
+
+nav a:hover {
+    color: #4CAF50; /* Cambia este color a tu preferencia */
+}
+
+.contenido {
+    padding: 1em;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+
+
+.login-form {
+    text-align: center;
+}
+
+
+.login-form form {
+    margin-top: 20px; /* Ajusta este margen según tus preferencias */
+}
+
+
+
+.login-form h1 {
+    color: #333;
+  }
+
+
+  .messages {
+    margin-top: 15px;
+  }
+  
+ .messages div {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* Estilos para el botón de iniciar sesión */
+.btn-success {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #4cae4c;
+}
+
+/* Estilos para el contenedor del mensaje y centrado */
+.container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Estilos para el contenedor del mensaje y centrado en dispositivos pequeños */
+  @media (max-width: 768px) {
+    .container-centered {
+      height: auto;
+    }
+  }
+  
+  /* Estilos para el mensaje y estilos generales */
+  .messages {
+    max-width: 400px;
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .messages h1 {
+    color: #333;
+  }
+  
+  /* Estilos para el mensaje de éxito */
+  .success-message {
+    color: #5cb85c;
+  }
+  
+  /* Estilos para el mensaje de error */
+  .error-message {
+    color: #d9534f;
+  }

@@ -1,27 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>{% block title %} Registro de usuario {% endblock title %}</title>
+{% block title %}Iniciar sesión{% endblock title %}
 
 {% block contenido %}
-<center>
-
-    <form method="POST" style="margin-top: 300px;">
-        <h1 class="h1">Iniciar sesión</h1>
-        <br>
-        <div class="messages">
-            {% for message in messages %}
-                <table{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</table>
-            {% endfor %}
-        </div>
-        <br>
-        {% csrf_token %}
-        <div class="container">
-            <table>{{ form }}</table>
-            <br><br>
-            <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
-        </div>
+  <center>
+    <form method="POST" class="login-form">
+      <h1 class="h1">Iniciar sesión</h1>
+      <br>
+      <div class="messages">
+        {% for message in messages %}
+          <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+      </div>
+      <br>
+      {% csrf_token %}
+      <div class="container">
+        <table>{{ form }}</table>
+        <br><br>
+        <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
+      </div>
     </form>
-
-</center>
+  </center>
 {% endblock %}

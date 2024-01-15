@@ -3,8 +3,44 @@
 
 {% block contenido %}
 
+<style>
+    /* Agregamos algunos estilos específicos para la página de contacto */
+
+    form {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    .message {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+    .error {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+</style>
+
 <center>
-    <form method="POST" style="margin: 200px;">
+    <form method="POST">
         <h1>Formulario de contacto</h1>
         <br>
         {% if messages %}
@@ -16,7 +52,7 @@
             {% csrf_token %}
             {{ form }}
         </table>
-        <input type="submit" value="enviar">
+        <input type="submit" value="Enviar">
     </form>
 </center>
 
