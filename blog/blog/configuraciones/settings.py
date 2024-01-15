@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),'static'),)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -133,3 +133,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
+
+
+
+from datetime import datetime, timedelta
+from django.contrib.auth import logout
+
+class SessionTimeoutMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if request.user.is_authenticated:
+            last_activity = request.session.get('last_activity')
+            if last_activity is not None:
+                now = datetime.now()
+                if (now - last_activity) > timedelta(minutes=30):
+                    logout(request)
+                    del request.session['last_activity']
+            request.session['last_activity'] = datetime.now()
+
+        response = self.get_response(request)
+
+        return response

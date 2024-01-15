@@ -18,10 +18,6 @@
         {% csrf_token %}
         <div class="container">
             <table>{{ form }}</table>
-            <br>
-            <a style="color: black;" href="{% url 'apps.usuario.registrar' %}">¿Todavía no está registrado? Registrate</a>
-            <br>
-            <a style="color: black;" href="{% url 'apps.usuario.password_reset' %}">Olvidé mi contraseña</a>
             <br><br>
             <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
         </div>
