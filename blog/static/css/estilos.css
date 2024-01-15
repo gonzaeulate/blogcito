@@ -131,3 +131,18 @@ footer {
   .error-message {
     color: #d9534f;
   }
+
+
+/* Estilos para el marco de la imagen */
+.img-frame {
+  max-width: 100%;
+  border: 5px solid #4CAF50;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.img-frame img {
+  width: 100%;
+  height: auto;
+}
