@@ -4,22 +4,69 @@
 {% block title %}Iniciar sesión{% endblock title %}
 
 {% block contenido %}
-  <center>
-    <form method="POST" class="login-form">
-      <h1 class="h1">Iniciar sesión</h1>
-      <br>
-      <div class="messages">
-        {% for message in messages %}
-          <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
-        {% endfor %}
-      </div>
-      <br>
-      {% csrf_token %}
-      <div class="container">
-        <table>{{ form }}</table>
-        <br><br>
-        <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
-      </div>
-    </form>
-  </center>
+<style>
+  /* Ajustes de estilo para la página de inicio de sesión */
+
+  .login-form {
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form h1 {
+    color: #dc3545; /* Cambiamos el color del título */
+  }
+
+  .messages {
+    margin-top: 15px;
+  }
+
+  .messages div {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8d7da; /* Cambiamos el color de fondo de los mensajes de error */
+    color: #721c24; /* Cambiamos el color del texto de los mensajes de error */
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+
+  /* Estilos para el botón de iniciar sesión */
+  .btn-success {
+    background-color: #dc3545; /* Cambiamos el color del botón */
+    color: #fff;
+    border: none;
+  }
+
+  .btn-success:hover {
+    background-color: #c82333; /* Cambiamos el color al pasar el mouse */
+  }
+</style>
+
+<center>
+  <form method="POST" class="login-form">
+    <h1 class="h1">Iniciar sesión</h1>
+    <br>
+    <div class="messages">
+      {% for message in messages %}
+        <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+      {% endfor %}
+    </div>
+    <br>
+    {% csrf_token %}
+    <div class="container">
+      <table>{{ form }}</table>
+      <br><br>
+      <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
+    </div>
+  </form>
+</center>
 {% endblock %}

@@ -9,25 +9,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
 </head>
 
-<body class="bg-light">
+<body style="background-color: #f2f2f2; color: #333;">
 
-<header>
+<header style="background-color: #ff5757; color: white; padding: 1em; text-align: center;">
     <a class="flex-sm-fill text-sm-center nav-link active" href="#">
-        <div class="img-frame">
-            <img src="{% static 'img/info.jpg' %}" style="max-width: 300px; margin: 30px;" class="img-fluid" alt="Logo">
+        <div class="img-frame" style="border: 5px solid #ff5757; border-radius: 8px; overflow: hidden; margin: 30px;">
+            <img src="{% static 'img/info.jpg' %}" style="max-width: 300px; margin: 0; padding: 15px;" class="img-fluid" alt="Logo">
         </div>
     </a>
-    
 
-    <nav class="nav nav-pills flex-column flex-sm-row">
-        <a class="flex-sm-fill text-sm-center nav-link active" href="{% url 'index' %}">Inicio</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#">Acerca de nosotros</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.posts:posts' %}">Posts</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.contacto:contacto' %}">Contacto</a>
+    <nav class="nav nav-pills flex-column flex-sm-row" style="background-color: #d93c3c; color: white; padding: 1em;">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="{% url 'index' %}" style="color: white;">Inicio</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: white;">Acerca de nosotros</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.posts:posts' %}" style="color: white;">Posts</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.contacto:contacto' %}" style="color: white;">Contacto</a>
         {% if user.is_authenticated %}
-            <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.usuario:logout' %}">Logout</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.usuario:logout' %}" style="color: white;">Logout</a>
         {% else %}
-            <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.usuario:login' %}">Login</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'apps.usuario:login' %}" style="color: white;">Login</a>
         {% endif %}
     </nav>
 </header>
@@ -36,7 +35,7 @@
 
 {% endblock %}
 
-<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+<footer id="sticky-footer" class="flex-shrink-0 py-4" style="background-color: #d93c3c; color: white; text-align: center;">
     <div class="container text-center">
         <small>&copy; 2024 Tu Blog. Todos los derechos reservados.</small>
     </div>
@@ -52,3 +51,4 @@
 <!-- Otros scripts según sea necesario -->
 </body>
 </html>
+

@@ -2,11 +2,51 @@
 {% load static %}
 
 {% block contenido %}
+<style>
+  /* Ajustes de estilo para el contenedor de mensajes centrado */
+
+  .container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .messages {
+    max-width: 400px;
+    padding: 20px;
+    margin: auto;
+    background-color: #f9f9f9; /* Cambiamos el color de fondo del contenedor */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .messages p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  /* Estilos para el mensaje de éxito */
+  .success-message {
+    color: #28a745; /* Cambiamos el color del texto del mensaje de éxito */
+    background-color: #d4edda; /* Cambiamos el color de fondo del mensaje de éxito */
+    border-color: #c3e6cb;
+  }
+
+  /* Estilos para el mensaje de error */
+  .error-message {
+    color: #721c24; /* Cambiamos el color del texto del mensaje de error */
+    background-color: #f8d7da; /* Cambiamos el color de fondo del mensaje de error */
+    border-color: #f5c6cb;
+  }
+</style>
+
 <div class="container-centered">
-    <div class="messages">
-        {% for message in messages %}
-            <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
-        {% endfor %}
-    </div>
+  <div class="messages">
+    {% for message in messages %}
+      <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

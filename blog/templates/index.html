@@ -2,19 +2,18 @@
 
 {% load static %}
 {% block contenido %}
-    <div class="contenido">
+    <div class="contenido" style="background-color: #f2f2f2; color: #333; padding: 1em;">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="display-4">Bienvenidos a Blogcito</h1>
+                <h1 class="display-4" style="color: #ff5757;">Bienvenidos a Blogcito</h1>
                 <p class="lead">Descubre artículos interesantes y mantente actualizado con las últimas noticias.</p>
             </div>
         </div>
 
         <div class="row mt-5">
-            <div class="col-md-4 img-frame">
-                <img src="{% static 'img/welcome.jpg' %}" class="img-fluid" alt="Bienvenidos">
+            <div class="col-md-4 img-frame" style="border: 5px solid #ff5757; border-radius: 8px; overflow: hidden; margin: 30px;">
+                <img src="{% static 'img/welcome.jpg' %}" class="img-fluid" alt="Bienvenidos" style="width: 100%; height: auto;">
             </div>
         </div>
-        
     </div>
 {% endblock %}
