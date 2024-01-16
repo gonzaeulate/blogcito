@@ -36,7 +36,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'g.p.e.140@gmail.com' 
 EMAIL_HOST_PASSWORD = '1234'
 
-SITE_NAME = 'Blogcito'
+SITE_NAME = 'blogcito'
 # Application definition
 
 INSTALLED_APPS = [

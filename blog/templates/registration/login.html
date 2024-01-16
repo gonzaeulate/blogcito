@@ -19,7 +19,8 @@
   }
 
   .login-form h1 {
-    color: #dc3545; /* Cambiamos el color del título */
+    font-size: 24px; /* Ajustamos el tamaño de la tipografía */
+    color: #ff6b81; /* Cambiamos el color del título */
   }
 
   .messages {
@@ -31,23 +32,44 @@
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #f8d7da; /* Cambiamos el color de fondo de los mensajes de error */
-    color: #721c24; /* Cambiamos el color del texto de los mensajes de error */
+    background-color: #ff7675; /* Cambiamos el color de fondo de los mensajes de error */
+    color: #d63031; /* Cambiamos el color del texto de los mensajes de error */
   }
 
   .container {
     margin-top: 20px;
   }
 
-  /* Estilos para el botón de iniciar sesión */
-  .btn-success {
-    background-color: #dc3545; /* Cambiamos el color del botón */
+  /* Estilos para el botón de iniciar sesión y enlaces de "¿Olvidaste tu contraseña?" y "Crear una cuenta" */
+  .btn-style {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff6b81; /* Cambiamos el color del fondo */
     color: #fff;
     border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .btn-style:hover {
+    background-color: #e84393; /* Cambiamos el color al pasar el mouse */
+  }
+
+  /* Estilo para el botón de iniciar sesión */
+  .btn-success {
+    width: 100%; /* Ajustamos el ancho al 100% */
+    padding: 15px; /* Ajustamos el padding */
+    font-size: 16px; /* Ajustamos el tamaño de la tipografía */
+    background-color: #ff6b81; /* Cambiamos el color del botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
   }
 
   .btn-success:hover {
-    background-color: #c82333; /* Cambiamos el color al pasar el mouse */
+    background-color: #e84393; /* Cambiamos el color al pasar el mouse */
   }
 </style>
 
@@ -67,6 +89,8 @@
       <br><br>
       <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
     </div>
+    <a href="{% url 'password_reset' %}" class="btn-success btn-style">¿Olvidaste tu contraseña?</a>
+    <a href="{% url 'apps.usuario:registrar' %}" class="btn-style">Crear una cuenta</a>
   </form>
 </center>
 {% endblock %}

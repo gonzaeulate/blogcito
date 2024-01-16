@@ -1,25 +1,75 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>{% block title %} Registro de usuario {% endblock title %}</title>
+{% block title %}Registro de usuario{% endblock title %}
 
 {% block contenido %}
+<style>
+  /* Ajustes de estilo para la página de registro de usuario */
+
+  form {
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-size: 24px; /* Ajustamos el tamaño de la tipografía */
+    color: #ff5757; /* Cambiamos el color del título */
+  }
+
+  .messages {
+    margin-top: 15px;
+  }
+
+  .messages p {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #ff7675; /* Cambiamos el color de fondo de los mensajes de error */
+    color: #d63031; /* Cambiamos el color del texto de los mensajes de error */
+  }
+
+  .container-fluid {
+    margin-top: 20px;
+  }
+
+  /* Estilo para el botón de registrar */
+  .btn-registrar {
+    width: 100%; /* Ajustamos el ancho al 100% */
+    padding: 10px 15px; /* Ajustamos el padding */
+    background-color: #ff5757; /* Cambiamos el color del botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el mouse */
+  }
+
+  .btn-registrar:hover {
+    background-color: #e84393; /* Cambiamos el color al pasar el mouse */
+  }
+</style>
+
 <center>
-    <form method="POST" enctype="multipart/form-data" style="margin-top: 50px; margin-bottom: 50px;">
-        <h1 style="color: #ff5757;">Registro de usuarios</h1>
-        <br>
-        <div class="messages">
-            {% for message in messages %}
-                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        <br>
-        {% csrf_token %}
-        <div class="container-fluid">
-            <table>{{ form }}</table>
-        </div>
-        <br><br>
-        <button type="submit" style="background-color: #ff5757; color: #fff; border: none; padding: 10px 15px; border-radius: 5px;">Registrar</button>
-    </form>
+  <form method="POST" enctype="multipart/form-data">
+    <h1>Registro de usuarios</h1>
+    <div class="messages">
+      {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% csrf_token %}
+    <div class="container-fluid">
+      <table>{{ form }}</table>
+    </div>
+    <button type="submit" class="btn-registrar">Registrar</button>
+  </form>
 </center>
 {% endblock %}
